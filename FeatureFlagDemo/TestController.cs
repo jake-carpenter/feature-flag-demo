@@ -43,12 +43,5 @@ namespace FeatureFlagDemo.Controllers
         {
             return nameof(FeatureFlags.Bar);
         }
-
-        [HttpGet("browser")]
-        [FeatureGate(FeatureFlags.Browser)]
-        public ActionResult<string> BrowswerFilter()
-        {
-            return nameof(FeatureFlags.Browser);
-        }
     }
 }
