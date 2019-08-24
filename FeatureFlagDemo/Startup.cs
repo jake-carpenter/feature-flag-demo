@@ -20,6 +20,9 @@ namespace FeatureFlagDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddFeatureManagement();
+            services.AddFeatureManagement();
+                //.UseDisabledFeaturesHandler(new OnlyHideBarFeatureHandler());
+            services.AddHttpContextAccessor();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

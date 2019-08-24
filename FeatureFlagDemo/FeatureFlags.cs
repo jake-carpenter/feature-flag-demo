@@ -2,6 +2,7 @@
 {
     public static class FeatureFlags
     {
-        public static string Foo = "Foo";
+        public const string Foo = "foo";
+        public const string Bar = "bar";
     }
 }

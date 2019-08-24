@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.FeatureManagement;
+using Microsoft.FeatureManagement.Mvc;
 
 namespace FeatureFlagDemo.Controllers
 {
@@ -20,13 +21,34 @@ namespace FeatureFlagDemo.Controllers
             return "hello world";
         }
 
-        [HttpGet("foo")]
-        public ActionResult<string> Foo()
+        [HttpGet("foo1")]
+        public ActionResult<string> FooExample1()
         {
             if (!FeatureManager.IsEnabled(FeatureFlags.Foo))
                 return NotFound();
 
             return nameof(FeatureFlags.Foo);
+        }
+
+        [HttpGet("foo2")]
+        [FeatureGate(FeatureFlags.Foo)]
+        public ActionResult<string> FooExample2()
+        {
+            return nameof(FeatureFlags.Foo);
+        }
+
+        [HttpGet("bar")]
+        [FeatureGate(FeatureFlags.Bar)]
+        public ActionResult<string> BarExample()
+        {
+            return nameof(FeatureFlags.Bar);
+        }
+
+        [HttpGet("browser")]
+        [FeatureGate(FeatureFlags.Browser)]
+        public ActionResult<string> BrowswerFilter()
+        {
+            return nameof(FeatureFlags.Browser);
         }
     }
 }
