@@ -1,4 +1,4 @@
-﻿namespace FeatureFlagDemo.Controllers
+﻿namespace FeatureFlagDemo
 {
     public static class FeatureFlags
     {

@@ -1,14 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.Extensions.Configuration;
-using Microsoft.FeatureManagement;
 using Microsoft.FeatureManagement.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FeatureFlagDemo.Controllers
+namespace FeatureFlagDemo
 {
     public class OnlyHideBarFeatureHandler : IDisabledFeaturesHandler
     {

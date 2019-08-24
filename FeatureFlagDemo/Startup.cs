@@ -1,5 +1,4 @@
-﻿using FeatureFlagDemo.Controllers;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -20,8 +19,10 @@ namespace FeatureFlagDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddFeatureManagement();
-            services.AddFeatureManagement();
-                //.UseDisabledFeaturesHandler(new OnlyHideBarFeatureHandler());
+
+            // Uncomment to enable the handler to block only 'Bar' feature
+            //services.AddFeatureManagement().UseDisabledFeaturesHandler(new OnlyHideBarFeatureHandler());
+
             services.AddHttpContextAccessor();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

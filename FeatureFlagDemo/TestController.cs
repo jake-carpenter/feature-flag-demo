@@ -2,7 +2,7 @@
 using Microsoft.FeatureManagement;
 using Microsoft.FeatureManagement.Mvc;
 
-namespace FeatureFlagDemo.Controllers
+namespace FeatureFlagDemo
 {
     [Route("[controller]")]
     [ApiController]
