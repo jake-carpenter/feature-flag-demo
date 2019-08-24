@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using FeatureFlagDemo.Controllers;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.FeatureManagement;
 
 namespace FeatureFlagDemo
 {
@@ -17,6 +19,7 @@ namespace FeatureFlagDemo
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddFeatureManagement();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
